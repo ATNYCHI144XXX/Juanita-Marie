@@ -1,0 +1,18 @@
+# K-Systems extraction tool outputs
+k-systems-export/
+*.tar.gz
+*.sha256
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Test outputs
+test-output/
+staging/
+EXTRACTION_MANIFEST.json
+EXTRACTION_SUMMARY.json
+CROWN_SEAL_PLACEHOLDER.txt
