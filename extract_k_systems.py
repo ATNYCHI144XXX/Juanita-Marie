@@ -89,19 +89,6 @@ def should_exclude_path(path: Path, exclude_dirs):
         pass
     return False
 
-def matches_keywords(path: str, keywords, priority_exts):
-    name = os.path.basename(path).lower()
-    # check extension priority first
-    ext = os.path.splitext(name)[1]
-    # If keywords found in filename
-    for kw in keywords:
-        if kw.lower() in name:
-            return True
-    # Also check extension as heuristic
-    if ext in priority_exts:
-        return True
-    return False
-
 def copy_with_metadata(src: Path, dst: Path):
     dst.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(src, dst)  # copies metadata (mtime, atime, mode bits)
@@ -253,8 +240,12 @@ def main():
     parser.add_argument("--no-confirm", action="store_true", help="Do not prompt for confirmations (be careful)")
     args = parser.parse_args()
 
-    if os.geteuid() == 0:
-        print("[!] Warning: Running as root. It's safer to run as a normal user. Continue with caution.")
+    try:
+        if os.geteuid() == 0:
+            print("[!] Warning: Running as root. It's safer to run as a normal user. Continue with caution.")
+    except AttributeError:
+        # os.geteuid() not available on Windows
+        pass
 
     # load keywords
     keywords = DEFAULT_KEYWORDS.copy()
