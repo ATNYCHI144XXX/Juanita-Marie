@@ -79,30 +79,26 @@ class GNNDynamics:
     
     def get_operator(self) -> KNodeUpdateOperator:
         """
-        Get the K-operator implementing GNN dynamics.
+        Get a basic K-operator implementing self-transformation only.
+        
+        Note: This method only applies self-transformation without neighbor aggregation.
+        For full GNN dynamics with neighbor aggregation, use `get_full_operator(state)`
+        or `simulate(state, num_iterations)`.
         
         Returns:
-            K-operator for message passing
+            K-operator for self-transformation
         """
         def gnn_update(x_v, incident_edges, context):
             """
-            GNN update function.
+            GNN self-transformation (without neighbor aggregation).
             
             Args:
                 x_v: Current node state
-                incident_edges: Dict of incoming edges
+                incident_edges: Dict of incoming edges (not used in this basic version)
                 context: Context vector (unused)
             """
-            # Self-transformation
+            # Self-transformation only
             h = self.W1 @ x_v
-            
-            # Aggregate neighbor messages
-            for (u, v), _ in incident_edges.items():
-                # Get neighbor state (we need access to the full state, 
-                # but NodeUpdateOperator only gives us incident edges)
-                # This is a limitation - in practice, edge weights could store neighbor states
-                # For now, we'll work with what we have
-                pass
             
             # Apply activation
             return self.activation(h)

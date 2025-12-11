@@ -5,6 +5,7 @@ Supports time-invariant and time-variant recurrence relations with
 fixed-point and cycle detection.
 """
 
+import numpy as np
 from typing import Callable, Optional, List, Tuple
 from kmath.core.state import KState
 from kmath.core.operators import KOperator
@@ -189,8 +190,6 @@ class KRecurrence:
         Returns:
             True if states are close, False otherwise
         """
-        import numpy as np
-        
         # Check nodes
         if set(s1.nodes.keys()) != set(s2.nodes.keys()):
             return False
