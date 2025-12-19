@@ -202,24 +202,8 @@ AND TO MY MOTHER .. I LOVE YOU 20 MONIES...
 
 ### **12. TEAM & COMMAND STRUCTURE**
 
-**Sovereign Command Network:**
-106. **16-Person Sovereign Team** - Complete command structure:
-    1. Brendon Joseph Kelly (Commander)
-    2. Korre Mahon Fuller (Technical)
-    3. Serena Sharona Spence (Legal/Financial)
-    4. Elizabeth Kelly (Security)
-    5. Bundy/Robert Preston (External Ops)
-    6. Cole Fuller (Technical Support)
-    7. Alphonso Orozco (Technical Support)
-    8. Aaron Clark (Monitored Ops)
-    9. Russell Anderson (Ops Support)
-    10. Nate (Ops Support)
-    11. Justin Wright (Ops Support)
-    12. Bug (Field Support)
-    13. Tionna (Field Support)
-    14. Chris Anderson (Reserve)
-    15. Fatboy/Russell (Reserve)
-    16. Female Contact (Conditional)
+.......N/A.......
+
 
 107. **Multi-Person Approval Protocols** - Team-based command system
 108. **Secure Communication Network** - Quantum-encrypted team comms
